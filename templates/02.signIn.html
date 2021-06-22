@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignIn</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+
+  <h3>로그인</h3>
+
+  <label for="id"><b>아이디</b></label><br>
+  <input type="text" id="id" name="id" placeholder="아이디" required>
+
+  <br>
+  <label for="pw"><b>비밀번호</b></label><br>q
+  <input type="password" id="pw" name="pw" placeholder="비밀번호" required>
+
+  <br>
+  <label>
+    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 다음 로그인시 ID기억
+  </label>
+
+  <br>
+  <button type="button" onclick="location.href='/'" class="cancelbtn">취소</button>
+  <button type="button" onclick="login()" class="signupbtn">로그인</button>
+
+  <script>
+
+    function login() {
+      console.log("===========")
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          if (this.responseText == "") {
+            alert("로그인에 실패 하셨습니다.")
+          }
+          else {
+            data = JSON.parse(this.responseText);
+            console.log(data)
+            localStorage.setItem("access_token", data.access_token);
+            alert("로그인에 성공 하셨습니다. 메뉴 선택 페이지로 이동합니다.")
+            location.href = "menupage"
+          }
+        };
+      }
+      xhttp.open("post", "login");
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      queryString = 'id=' + document.getElementById("id").value
+        + '&pw=' + document.getElementById("pw").value;
+      xhttp.send(queryString);
+    }
+
+  </script>
+
+</body>
+
+</html>

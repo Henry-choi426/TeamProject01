@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
+</head>
+<body>
+
+<h1>Main에 오신것을 환영합니다</h1>
+<h2>원하는 메뉴를 선택하세요</h2>
+
+<form>
+  <h3>메뉴</h3>
+  <div id="menuname">메뉴이름</div><br>
+  <div id="menuprice">메뉴가격</div><br>
+  <div id="menuinfo">메뉴설명</div><br>
+  <label for="orderquantity">수량</label>
+  <input type="number" id="orderquantity" name="orderquantity" min="0" max="">
+  <button type="submit" class="button" id="insertorder" onclick=>추가</button>
+  <button type="submit" class="button" id="updateorder" onclick=>변경</button><br>
+</form>
+
+<br>
+<button type="submit" class="button" id="select" onclick=>선택</button>
+<button type="submit" class="button" id="cancel" onclick=>취소</button><br>
+<br>
+
+<br>
+<button type="button" class="button" id="signoff" onclick=>로그아웃</button>
+<button type="button" class="button" id="userinfo" onclick=>회원정보</button>
+
+</body>
+</html>
