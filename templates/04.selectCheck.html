@@ -12,8 +12,8 @@
 
 <form>
   <h3>주문목록</h3>
-  <div id="menuName">메뉴</div>
-  <div id="menuPrice">가격</div>
+  <div id="menuname">메뉴</div>
+  <div id="menuprice">가격</div>
   <label for="quantity">수량</label>
   <input type="number" id="quantity" name="quantity" min="0" max="">
   <button type="button" class="button" id="updateorder" onclick=>변경</button>
@@ -22,11 +22,11 @@
 
 <div id="totalPrice">결제금액</div>
 
-<button type="submit" class="button" id="order" onclick=>주문</button>
-<button type="submit" class="button" id="cancel" onclick=>취소</button><br>
+<button type="button" class="button" id="order" onclick=>주문</button>
+<button type="button" class="button" id="cancel" onclick="history.back()">취소</button><br>
 
 <br>
-<button type="button" class="button" id="signoff" onclick=>로그아웃</button>
+<button type="button" class="button" id="signoff" onclick="location.href='/logout'">로그아웃</button>
 <button type="button" class="button" id="userinfo" onclick=>회원정보</button>
 
 </body>

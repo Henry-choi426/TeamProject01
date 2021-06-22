@@ -10,11 +10,11 @@ class userDAO:
             conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
             cur = conn.cursor()
             try:
-                cur.execute("insert into usert values (:user_id, :user_pw, :user_name, :user_email)",
+                cur.execute("insert into user_t values (:user_id, :user_pw, :user_name, :user_email)",
                             user_id=dto1.getuser_id(), user_pw=dto1.getuser_pw(), user_name=dto1.getuser_name(), user_email=dto1.getuser_email())
                 print("---------------")
                 conn.commit()
-                cur.close()  
+                cur.close()
                 conn.close()
                 return "회원가입 완료"
             except Exception as e:  
@@ -34,7 +34,7 @@ class userDAO:
             cur = conn.cursor()
 
             try:
-                cur.execute("select * from usert where user_id=:v", v=user_id)
+                cur.execute("select * from user_t where user_id=:v", v=user_id)
                 row = cur.fetchone()  
                 data = '{"id":"' + row[0] + '", "pw":' + str(row[1]) + '}'
             except Exception as e: 

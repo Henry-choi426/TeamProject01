@@ -35,6 +35,11 @@ def signin_page():
 def menu_page():
     return render_template('03.menuSelect.html')
 
+# 선택 체크 페이지
+@app.route('/selectcheckpage', methods=['get'])
+def selectcheck_page():
+    return render_template('04.selectCheck.html')
+
 # 회원가입 비동기
 @app.route('/signup', methods=['post'])
 def new_user():
@@ -56,13 +61,20 @@ def login_proc():
     ruser= literal_eval(dao.userone(user_id))
     ruser["pw"] = str(ruser["pw"])
     if user_id == ruser.get('id') and user_pw == ruser.get('pw'):
-        print("=============")
+        # global bucket = OrderDTO(user_id,1,0) 장바구니 DTO 생성
         return jsonify(
             access_token=create_access_token(identity=user_id,fresh=True)
         ), 200
     else:
         return ""
-        
+
+
+
+# @app.route('/addmenu', methods=["post"])
+# @jwt_required()
+
+
+
 @app.route('/user_only', methods=["post"])
 @jwt_required()
 def user_only():
