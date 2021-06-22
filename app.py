@@ -84,7 +84,7 @@ def user_only():
     if cur_user is None:
         return ""
     else:
-        return jsonify(cur_user) 
+        return jsonify(cur_user)
 
 
 if __name__ == '__main__':
