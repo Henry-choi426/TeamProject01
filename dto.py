@@ -34,3 +34,60 @@ class UserDTO:
 
     def __str__(self):
         return 'id : ' + self.user_id + '- pw : ' + self.user_pw + '- 이름 : ' + self.user_name + '- email : ' + self.user_email
+
+
+class menuDTO:
+    def __init__(self, menuid, menuname, menuprice):
+        self.menuid = menuid
+        self.menuname = menuname
+        self.menuprice = menuprice
+
+    def getMenuid(self):
+        return self.menuid
+    
+    def setMenuid(self, newmenuid):
+        self.menuid = newmenuid
+
+    def getMenuname(self):
+        return self.menuname
+
+    def setMenuname(self, newmenuname):
+        self.menuname = newmenuname
+
+    def getMenuprice(self):
+        return self.menuprice
+
+    def setMenuprice(self, newmenuprice):
+        self.menuprice = newmenuprice
+
+
+class orderDTO:
+    def __init__(self, orderid, userid, menuid, orderquantity):
+        self.orderid = orderid
+        self.userid = userid
+        self.menuid = menuid
+        self.orderquantity = orderquantity
+
+    def getOrderid(self):
+        return self.orderid
+
+    def setOrderid(self, neworderid):
+        self.orderid = neworderid
+
+    def getUserid(self):
+        return self.orderid
+
+    def setUserid(self, newuserid):
+        self.userid = newuserid
+
+    def getMenuid(self):
+        return self.menuid
+
+    def setMenuid(self, newmenuid):
+        self.menuid = newmenuid
+
+    def getOrderquantity(self):
+        return self.orderquantity
+
+    def setOrderquantity(self, neworderquantity):
+        self.orderquantity = neworderquantity

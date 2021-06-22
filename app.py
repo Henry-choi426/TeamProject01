@@ -69,18 +69,20 @@ def login_proc():
         return ""
 
 
-
-# @app.route('/addmenu', methods=["post"])
-# @jwt_required()
-
+# 메뉴 데이터 select
+@app.route('/menu_select', methods=["post"])
+def menu_select():
+    for i in range(0,6):
+      print(request.form.get(i))   
+    return ""
 
 
 @app.route('/user_only', methods=["post"])
 @jwt_required()
 def user_only():
-    print("==================")
+    # print("==================")
     cur_user = get_jwt_identity()
-    print(cur_user)
+    # print(cur_user)
     if cur_user is None:
         return ""
     else:

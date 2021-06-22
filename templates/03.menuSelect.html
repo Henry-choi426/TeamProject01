@@ -89,11 +89,9 @@
           console.log(msg)
         };
       }
-      xhttp.open("post", "signup");
+      xhttp.open("post", "menu_select");
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      queryString = 'menu_id='+menuid
-
-      xhttp.send(queryString);
+      xhttp.send(menuid);
     }
 
     // 토큰 확인 후 데이터 확인
@@ -106,14 +104,18 @@
       authorize()
       sessionStorage.clear();
       var step;
+      var menu_all = '{';
       for (step = 1; step < 5; step++) {
         if (document.getElementById("orderquantity" + step).value > 0) {
           sessionStorage.setItem(step, document.getElementById("orderquantity" + step).value);
-          menuselect(step)
+          menu_all = menu_all + +step + "=" + document.getElementById("orderquantity" + step).value + "&"
         };
+      };
+      menu_all = menu_all.slice(0, -1) + "}";
+      console.log(menu_all)
+      menuselect(menu_all)
+    };
 
-      }
-    }
   </script>
 
 </body>
