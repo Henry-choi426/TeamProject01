@@ -71,10 +71,11 @@ def login_proc():
 
 # 메뉴 데이터 select
 @app.route('/menu_select', methods=["post"])
-def menu_select():
-    for i in range(0,6):
-      print(request.form.get(i))   
-    return ""
+def menuselect():
+    menu = list()
+    menu = list(request.form.keys())
+
+    # dao 에서 가져와야 하는 것 ->  select menu_name, menu_price from menu where menu_id = :v, v = menu_id
 
 
 @app.route('/user_only', methods=["post"])
