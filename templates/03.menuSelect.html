@@ -10,157 +10,114 @@
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
 
-  <style>
-
-    
-    table.right{
-      border-collapse: collapse;
-      border-spacing: 0;
-      width: 50%;
-      border: 1px solid rgb(243, 240, 240);
-    }
-       
-    th, td {
-      text-align: center;
-      padding: 16px;
-    }
-    
-    th:first-child, td:first-child {
-      text-align: left
-    
-    }
-    
-    tr:nth-child(even) {
-      background-color: #f2f2f2
-    }
-    
-    .fa-Price {
-      color: rgb(15, 15, 15);
-    }
-    
-    .fa-Quant {
-      color: rgb(12, 1, 1);
-    }
-    .fa-Total  {
-      color: rgb(235, 16, 34);
-    }
-
-   
-
-    </style>
-
-
-
-
 </head>
+
 <body>
- 
-  <h2>Order</h2>
 
-  <div style="text-align:right;"></div>
-  <table style ="text-align:right;">
-    <tr>
-      <th style="width:50%">Coffee</th>
-      <th>Quantity</th>
-      <th>Pice</th>
-      <th>Total Price</th>
-
-           
-    </tr>
-    <tr>
-      <td>Sample text</td>
-      <td><i class="fa fa-remove">2</i></td>
-      <td><i class="fa fa-check">7</i></td>
-      <td><i class="fa fa-Total">14</i></td>
-    </tr>
-    <tr>
-      <td>Sample text</td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-Total"></i></td>
-    </tr>
-    <tr>
-      <td>Sample text</td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-Total"></i></td>
-    </tr>
-    <tr>
-      <td>Sample text</td>
-      <td><i class="fa fa-remove"></i></td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-Total"></i></td>
-    </tr>
-    <tr>
-      <td>Sample text</td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-check"></i></td>
-      <td><i class="fa fa-Total"></i></td>
-    </tr>
-  </table>
-</div>
-
-
-<h1>Pick Your Favorite</h1>
-<h2>원하는 메뉴를 선택하세요</h2>
+  <h1>Pick Your Favorite</h1>
+  <h2>원하는 메뉴를 선택하세요</h2>
 
 
   <br><br>
   <div id="menuname">Coffee in Venice</div><br>
   <div id="menuprice">5.0</div><br>
-  <div id="menuinfo">크림과 오렌지 향이 가득한 따뜻한 커피가<br>
-    반짝이는 베네치아의 축제의 추억을 선사합니다.</div><br>
+  <div id="menuinfo">크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.</div><br>
   <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
- 
+  <button type="button" class="button" id="insertorder" onclick=>추가</button>
+  <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
   <br><br>
   <div id="menuname">Sidamo Mountain Coffee</div><br>
   <div id="menuprice">6.0</div><br>
-  <div id="menuinfo">에티오피아 고원 가장자리의 남쪽에 위치한<br>
-    Sidamo 지역에서 생산된 커피로 인상적인<br>
-    다양한 풍미를 선사합니다. 매콤하고 향긋한<br>
-    향과 코코아향이 풍부합니다</div><br>
+  <div id="menuinfo">에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다</div><br>
   <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
- 
+  <button type="button" class="button" id="insertorder" onclick=>추가</button>
+  <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+
   <br><br>
   <div id="menuname">Toba Mist Coffee</div><br>
   <div id="menuprice">7.0</div><br>
-  <div id="menuinfo">수마트라 섬 해발 약 1,200m의 토바호수<br>
-   가장자리에서 재배하는 이 특별한 커피는<br>
-   세미 워싱 프로세스를 통해 꽃향과 시트러스,<br>
-   다크 초콜릿, 부드러운 향신료 향이 납니다</div><br>
+  <div id="menuinfo">수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다
+  </div><br>
   <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
-  
+  <button type="button" class="button" id="insertorder" onclick=>추가</button>
+  <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
   <br><br>
   <div id="menuname">Sweet Mexico Coffee</div><br>
   <div id="menuprice">8.0</div><br>
-  <div id="menuinfo">팟에 계피와 설탕으로 끓인 전통적인<br>
-    멕시코커피로 특별한 풍미가 전해집니다.</div><br>
+  <div id="menuinfo">팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.</div><br>
   <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
-  
+  <button type="button" class="button" id="insertorder" onclick=>추가</button>
+  <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
 
-<br>
-<div id="totalPrice">결제금액</div>
-<button type="button" class="button" id="select" onclick=>주문</button>
-<button type="button" class="button" id="cancel" onclick="location.href='/'">취소</button><br>
-<br>
+  <br>
+  <div id="totalPrice">결제금액</div>
+  <button type="button" class="button" id="select" onclick="total_price()">주문</button>
+  <button type="button" class="button" id="cancel" onclick="location.href='/'">취소</button><br>
+  <br>
 
-<br>
-<button type="button" class="button" id="signoff" onclick="location.href='/logout'">로그아웃</button>
-<button type="button" class="button" id="userinfo" onclick="location.href='/'">회원정보</button>
+  <br>
+  <button type="button" class="button" id="signoff" onclick="location.href='/logout'">로그아웃</button>
+  <button type="button" class="button" id="userinfo" onclick="location.href='/'">회원정보</button>
+
+  <script>
+    function authorize() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          if (this.responseText == "") {
+            console.log(this.responseText)
+            alert("로그인 상태가 아닙니다. 로그인을 다시 해주세요.")
+            location.href = "signinpage"
+          };
+        };
+      };
+      token = localStorage.getItem("access_token");
+      xhttp.open("POST", "user_only");
+      xhttp.setRequestHeader("Authorization", "Bearer " + token);
+      xhttp.send();
+    }
+
+    // 메뉴 번호 받아 db에서 데이터 추출
+    function menuselect(menuid) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          msg = JSON.parse(this.responseText)
+          console.log(msg)
+        };
+      }
+      xhttp.open("post", "menu_select");
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(menuid);
+    }
+
+    // 토큰 확인 후 데이터 확인
+    function total_price() {
+      if (localStorage.getItem("access_token") == null) {
+        alert("로그인 상태가 아닙니다. 로그인을 다시 해주세요.")
+        location.href = "signinpage"
+        return ""
+      }
+      authorize()
+      sessionStorage.clear();
+      var step;
+      var menu_all = '{';
+      for (step = 1; step < 5; step++) {
+        if (document.getElementById("orderquantity" + step).value > 0) {
+          sessionStorage.setItem(step, document.getElementById("orderquantity" + step).value);
+          menu_all = menu_all + +step + "=" + document.getElementById("orderquantity" + step).value + "&"
+        };
+      };
+      menu_all = menu_all.slice(0, -1) + "}";
+      console.log(menu_all)
+      menuselect(menu_all)
+    };
+
+  </script>
 
 </body>
+
 </html>
-
-
-<br>
-
-
-
-
-</body>
-</html>
-
-
