@@ -10,24 +10,21 @@
 </head>
 
 <body>
+  <form>
 
-  <h3>로그인</h3>
+    <h3>로그인</h3>
 
-  <label for="id"><b>아이디</b></label><br>
-  <input type="text" id="id" name="id" placeholder="아이디" required>
+    <label for="id"><b>아이디</b></label><br>
+    <input type="text" class="form" id="id" name="id" placeholder="아이디" required>
 
-  <br>
-  <label for="pw"><b>비밀번호</b></label><br>q
-  <input type="password" id="pw" name="pw" placeholder="비밀번호" required>
+    <br>
+    <label for="pw"><b>비밀번호</b></label><br>q
+    <input type="password" class="form" id="pw" name="pw" placeholder="비밀번호" required>
 
-  <br>
-  <label>
-    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 다음 로그인시 ID기억
-  </label>
-
-  <br>
-  <button type="button" onclick="location.href='/'" class="cancelbtn">취소</button>
-  <button type="button" onclick="login()" class="signupbtn">로그인</button>
+    <br>
+    <button type="button" class="button" onclick="location.href='/'" class="cancelbtn">취소</button>
+    <button type="button" class="button" onclick="login()" class="signupbtn">로그인</button>
+  </form>
 
   <script>
 

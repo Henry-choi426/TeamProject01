@@ -11,31 +11,31 @@
 </head>
 
 <body>
+  <form>
+    <h3>회원가입</h3>
+    <br>
+    <label for="name"><b></b></label><br>
+    <input type="text" class="form" id="name" name="name" value="이름test" placeholder="이름" required>
 
-  <h3>회원가입</h3>
-  <br>
-  <label for="name"><b>이름</b></label><br>
-  <input type="text" id="name" name="name" value="이름test" placeholder="이름" required>
+    <label for="id"><b></b></label><br>
+    <input type="text" class="form" id="id" name="id" value="test" placeholder="아이디" required>
 
-  <label for="id"><b>아이디</b></label><br>
-  <input type="text" id="id" name="id" value="test" placeholder="아이디" required>
+    <br>
+    <label for="pw"><b></b></label><br>
+    <input type="password" class="form" id="pw" name="pw" value="123" placeholder="비밀번호" required>
 
-  <br>
-  <label for="pw"><b>비밀번호</b></label><br>
-  <input type="password" id="pw" name="pw" value="123" placeholder="비밀번호" required>
+    <br>
+    <label for="pwCheck"><b></b></label><br>
+    <input type="password" class="form" id="pwCheck" name="pwCheck" value="123" placeholder="비밀번호확인" required>
 
-  <br>
-  <label for="pwCheck"><b>비밀번호확인</b></label><br>
-  <input type="password" id="pwCheck" name="pwCheck" value="123" placeholder="비밀번호확인" required>
+    <br>
+    <label for="email"><b></b></label><br>
+    <input type="text" class="form" id="email" name="email" value="test@naver.com" placeholder="이메일주소" required>
 
-  <br>
-  <label for="email"><b>이메일</b></label><br>
-  <input type="text" id="email" name="email" value="test@naver.com" placeholder="이메일주소" required>
-
-  <br>
-  <button type="submit" onclick="createuser()">가입완료</button>
-  <button type="button" onclick="location.href='/'" class="cancelbtn">취소</button>
-
+    <br>
+    <button type="button" class="button" onclick="createuser()">가입완료</button>
+    <button type="button" class="button" onclick="location.href='/'" class="cancelbtn">취소</button>
+  </form>
 
   <script>
 
@@ -47,14 +47,14 @@
           alert(msg.result)
         };
       }
-      xhttp.open("post", "signup");  
+      xhttp.open("post", "signup");
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       queryString = 'id=' + document.getElementById("id").value
         + '&pw=' + document.getElementById("pw").value
         + '&name=' + document.getElementById("name").value
         + '&email=' + document.getElementById("email").value;
 
-      xhttp.send(queryString); 
+      xhttp.send(queryString);
     }
 
   </script>
