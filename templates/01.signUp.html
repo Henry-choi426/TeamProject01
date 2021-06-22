@@ -45,6 +45,7 @@
         if (this.readyState == 4 && this.status == 200) {
           msg = JSON.parse(this.responseText)
           alert(msg.result)
+          location.href = "signinpage"
         };
       }
       xhttp.open("post", "signup");
