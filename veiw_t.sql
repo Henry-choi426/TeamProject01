@@ -8,7 +8,7 @@ drop table user_t;
 create table user_t(
     user_id varchar2(15) primary key,
     user_pw varchar2(15) not null,
-    user_name varchar2(10) not null
+    user_name varchar2(10) not null,
     user_email varchar2(20) not null
 );
 insert into menu values('id','pw','이름','email'); -- 데  
@@ -26,7 +26,7 @@ create sequence seq_menu_01;
 drop table menu;
 create table menu(
     menu_id number(4) primary key,
-    menu_name varchar2(20) not null,
+    menu_name varchar2(30) not null,
     menu_price number(8) not null
 );
 insert into menu values(seq_menu_01.nextval,'Cafe_De_Olla', 8000); 
