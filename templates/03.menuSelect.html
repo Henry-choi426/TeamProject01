@@ -95,11 +95,38 @@
       color: rgb(235, 16, 34);
     }
 
-    /* </div> */
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .responsive {
+      padding: 0 6px;
+      width: 60%;
+      margin: auto;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      .responsive {
+        width: 100%;
+      }
+    }
   </style>
 
 </head>
-
 
 
 <body>
@@ -112,111 +139,140 @@
 
   <div class="row">
     <div class="column">
-      <h2>Order</h2>
-      <div id="menuname">Coffee in Venice</div><br>
-      <div id="menuprice">5.0</div><br>
-      <div id="menuinfo">크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.</div><br>
-      <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
-      <button type="button" class="button" id="insertorder" onclick=>추가</button>
-      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+
+      <h2>Menu</h2>
+
+      <div class="responsive">
+        <div class="gallery">
+          <img src="static/images/menu01.png" alt="menu01" width="300" height="200">
+          <div class="desc">
+            Coffee in Venice<br>
+            5.0<br>
+            크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.<br><br>
+            <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
+            <button type="button" class="button" id="insertorder" onclick=>추가</button>
+            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+          </div>
+        </div>
+      </div>
 
       <br><br>
-      <div id="menuname">Sidamo Mountain Coffee</div><br>
-      <div id="menuprice">6.0</div><br>
-      <div id="menuinfo">에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다</div>
-      <br>
-      <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
-      <button type="button" class="button" id="insertorder" onclick=>추가</button>
-      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+      <div class="responsive">
+        <div class="gallery">
+          <img src="static/images/menu02.png" alt="menu02" width="300" height="200">
+          <div class="desc">
+            Sidamo Mountain Coffee<br>
+            6.0<br>
+            에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다<br><br>
+            <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
+            <button type="button" class="button" id="insertorder" onclick=>추가</button>
+            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+          </div>
+        </div>
+      </div>
 
       <br><br>
-      <div id="menuname">Toba Mist Coffee</div><br>
-      <div id="menuprice">7.0</div><br>
-      <div id="menuinfo">수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다
-      </div><br>
-      <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
-      <button type="button" class="button" id="insertorder" onclick=>추가</button>
-      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+
+      <div class="responsive">
+        <div class="gallery">
+          <img src="static/images/menu03.png" alt="menu03" width="300" height="200">
+          <div class="desc">
+            Toba Mist Coffee<br>
+            7.0<br>
+            수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다<br><br>
+            <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
+            <button type="button" class="button" id="insertorder" onclick=>추가</button>
+            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+          </div>
+        </div>
+      </div>
 
       <br><br>
-      <div id="menuname">Sweet Mexico Coffee</div><br>
-      <div id="menuprice">8.0</div><br>
-      <div id="menuinfo">팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.</div><br>
-      <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
-      <button type="button" class="button" id="insertorder" onclick=>추가</button>
-      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
-      <br>
+      <div class="responsive">
+        <div class="gallery">
+          <img src="static/images/menu04.png" alt="menu04" width="300" height="200">
+          <div class="desc">
+            Cafe De Olla<br>
+            8.0<br>
+            팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.<br><br>
+            <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
+            <button type="button" class="button" id="insertorder" onclick=>추가</button>
+            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+          </div>
+        </div>
+      </div>
+      <br><br>
     </div>
 
-    <div class="column">  
-    <!-- <div> -->
-      <h2>Menu</h2>
-      <!-- <table id="dynamicTable"> -->
+    <div class="column">
+      <h2>Order</h2>
       <table>
         <tr>
           <th>Coffee</th>
           <th>Quantity</th>
-          <th>Pice</th>
+          <th>Price</th>
           <th>Total Price</th>
         </tr>
-        
-        
       </table>
-      <div id="tableBody"></div> 
-  </div>
+      <div id="tableBody"></div>
 
-
-<!--                 
-        <tr>
-        <td>Sample text</td>
-        <td><i class="fa fa-remove">2</i></td>
-        <td><i class="fa fa-check">7</i></td>
-        <td><i class="fa fa-Total">14</i></td>
-        </tr>
-        <tr>
-        <td>Sample text</td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-Total"></i></td>
-        </tr>
-        <tr>
-        <td>Sample text</td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-Total"></i></td>
-        </tr>
-        <tr>
-        <td>Sample text</td>
-        <td><i class="fa fa-remove"></i></td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-Total"></i></td>
-        </tr>
-        <tr>
-        <td>Sample text</td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-check"></i></td>
-        <td><i class="fa fa-Total"></i></td>
-        </tr> -->
-      <!-- </table> -->
       <br><br><br><br><br><br>
       <div id="totalPrice">결제금액</div>
-      <button type="button" class="button" id="select" onclick="total_price()">주문</button>
-      <button type="button" class="button" id="cancel" onclick="location.href='/'">취소</button><br>
+      <button type="button" class="button" id="select" onclick="total_price()">장바구니조회</button>
+      <button type="button" class="button" id="payment" onclick="orderComplete()">결제하기</button>
       <br>
-
-    <!-- </div> -->
+    </div>
   </div>
+  <!-- </div> -->
 
 
   <div class="footer">
     <br>
-    <button type="button" class="button" id="signoff" onclick="location.href='/logout'">로그아웃</button>
-    <button type="button" class="button" id="userinfo" onclick="location.href='/'">회원정보</button>
+    <button type="button" class="button" id="signoff" onclick="logout()">로그아웃</button>
+    <!-- <button type="button" class="button" id="userinfo" onclick="location.href='/'">회원정보</button> -->
   </div>
 
 
   <script>
+    function orderComplete() {
+      msg = "결제를 하시겠습니까?";
+      if (confirm(msg) == 0) {
+        return ""
+      }
+      if (localStorage.getItem("access_token") == null) {
+        alert("로그인 상태가 아닙니다. 로그인을 다시 해주세요.")
+        location.href = "signinpage"
+        return ""
+      }
+      authorize();
+      const userId = localStorage.getItem("user_Id");
+      sessionStorage.clear();
+      var step;
+      var menuAll = '';
+      for (step = 1; step < 5; step++) {
+        if (document.getElementById("orderquantity" + step).value > 0) {
+          sessionStorage.setItem(step, document.getElementById("orderquantity" + step).value);
+          menuAll = menuAll + step + "=(" + userId + "," + step + "," + document.getElementById("orderquantity" + step).value + ")&"
+        };
+      };
+      menuAll = menuAll.slice(0, -1);
+      orderAjax(menuAll)
+    }
+
+    function orderAjax(menu) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          alert("주문이 완료됐습니다.")
+          location.href = "ordercheckpage"
+        };
+      }
+      xhttp.open("post", "order");
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send(menu);
+    }
+
     function authorize() {
       const xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -225,7 +281,10 @@
             console.log(this.responseText)
             alert("로그인 상태가 아닙니다. 로그인을 다시 해주세요.")
             location.href = "signinpage"
+            return ""
           };
+          id = this.responseText
+          return id
         };
       };
       token = localStorage.getItem("access_token");
@@ -268,25 +327,11 @@
         tableData += '<td><i class="fa fa-Total">' + td[key].price * td[key].count + '</i></td>';
         tableData += '</tr>';
       }
-      tableData = tableData+'</table>';
-
-      // for (key in td) {
-      //   tableData += `<tr>
-      //             <td> + td[key].name + '</td>';
-      //             <td><i class="fa fa-Quantity">' + td[key].count + '</i></td>';
-      //             <td><i class="fa fa-Price">' + td[key].price + '</i></td>';
-      //             <td><i class="fa fa-Total">' + td[key].price * td[key].count + '</i></td>';
-      //             </tr>`;
-      // }
-
+      tableData = tableData + '</table>';
       console.log(tableData);
       document.getElementById("tableBody").innerHTML = tableData;
-      // document.getElementById("tableBody").
-      
+
     }
-    // <td><i class="fa fa-check"></i></td>
-    //     <td><i class="fa fa-check"></i></td>
-    //     <td><i class="fa fa-Total"></i></td>
 
     // 토큰 확인 후 데이터 확인
     function total_price() {

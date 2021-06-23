@@ -36,9 +36,9 @@ def menu_page():
     return render_template('03.menuSelect.html')
 
 # 선택 체크 페이지
-@app.route('/selectcheckpage', methods=['get'])
-def selectcheck_page():
-    return render_template('04.selectCheck.html')
+@app.route('/ordercheckpage', methods=['get'])
+def ordertcheck_page():
+    return render_template('04.orderCheck.html')
 
 # 회원가입 비동기
 @app.route('/signup', methods=['post'])
@@ -78,15 +78,24 @@ def menuselect():
     for i in menu:
         cnt.append(request.form.get(i))
     dic = { a:b for a, b in zip(menu, cnt) }
-    print(dic)
     data = literal_eval(userDAO.ordermenu(menu))
     for i,v in dic.items():
         data[int(i)]['count'] = int(v)
-    print(data)
     return jsonify(data)
 
     # dao 에서 가져와야 하는 것 ->  select menu_name, menu_price from menu where menu_id = :v, v = menu_id
 
+@app.route('/order',methods=['post'])
+def order_complete():
+    menu = list(request.form.keys())
+    cnt = list()
+    for i in menu:
+        cnt.append(request.form.get(i)[1:-1].split(","))
+    if userDAO.order_insert(cnt):
+        return "성공"
+    else:
+        return ""
+    # dao 만들기
 
 @app.route('/user_only', methods=["post"])
 @jwt_required()

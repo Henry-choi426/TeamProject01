@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OrderCheck</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </head>
 <body>
 
@@ -15,10 +17,10 @@
 <br>
 <button type="button" class="button" id="cancel" onclick=>확인</button>
 <br><br>
-<img src="images/move1.gif">
+<img src="static/images/move1.gif" alt="menu04" width="300" height="200">
 <br><br>
-<button type="button" class="button" id="signoff" onclick=>로그아웃</button>
-<button type="button" class="button" id="userinfo" onclick=>회원정보</button>
+<button type="button" class="button" id="signoff" onclick="logout()">로그아웃</button>
+<!-- <button type="button" class="button" id="userinfo" onclick=>회원정보</button> -->
 <br><br>
 
 </body>
