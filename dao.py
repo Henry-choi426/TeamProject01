@@ -4,6 +4,30 @@ import json, collections
 
 class userDAO:
 
+    def ordermenu(menu_id):
+        data = "{"
+        try:
+            conn = cx_Oracle.connect(user="SCOTT", password="TIGER", dsn="xe")
+            cur = conn.cursor()
+            try:
+                print(menu_id)
+                # (1,2,3) -> str
+                for i in menu_id:
+                    i = int(i)
+                    cur.execute("select menu_name, menu_price from menu where menu_id in :m", m=i)
+                    row = cur.fetchone()  
+                    data += str(i)+':{"name":"' + row[0] + '", "price":' + str(row[1]) + '},'
+                data = data[0:-1]+"}"
+                # print(data)
+                # data =json.dumps(data, ensure_ascii=False)   
+                # print(data)
+            except Exception as e:
+                print(e) 
+        finally:
+            cur.close() 
+            conn.close()
+        return data
+
     # 회원가입 로직
     def userinsert(dto1):
         try:
@@ -91,4 +115,4 @@ class userDAO:
                 conn.close()
 
 if __name__ == '__main__':
-    print(userDAO.userone('test'))
+    userDAO.ordermenu({"1","2","3"})

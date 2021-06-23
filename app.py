@@ -74,6 +74,16 @@ def login_proc():
 def menuselect():
     menu = list()
     menu = list(request.form.keys())
+    cnt = list()
+    for i in menu:
+        cnt.append(request.form.get(i))
+    dic = { a:b for a, b in zip(menu, cnt) }
+    print(dic)
+    data = literal_eval(userDAO.ordermenu(menu))
+    for i,v in dic.items():
+        data[int(i)]['count'] = int(v)
+    print(data)
+    return jsonify()
 
     # dao 에서 가져와야 하는 것 ->  select menu_name, menu_price from menu where menu_id = :v, v = menu_id
 
