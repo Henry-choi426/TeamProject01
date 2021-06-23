@@ -66,16 +66,21 @@
 
               Frontend : 고객은 메뉴별 수량을 설정하고 주문한 것에 대한 가격을 확인 후 결제 할 수 있다. 결제 후 OrderCheck Page로 이동 
 
-              Backend : 고객이 지정한 메뉴와 수량은 session storage 에 저장되며 DAO를 통해 DB에서 가격 정보를 빼온다. 
+              Backend :  Local storage에 저장된 토큰이 유효한지 비동기 방식으로 확인 후 메뉴 페이지에서 고객이 지정한 메뉴와 수량을  session storage 에 저장한다.
+	      		
+			 고객이 선택한 메뉴 데이터를 DAO를 통해 DB에서 가격 정보를 빼온다. 
                       
-                        고객에서 얻은 메뉴와 수량 DB 에서 추출한 가격 정보를 바탕으로 Total Price를 구해 HTML에 출력한다. 
+                         1) 장바구니 조회: 고객에서 얻은 메뉴와 수량 DB 에서 추출한 가격 정보를 바탕으로 Total Price를 구해 HTML에 테이블 형식으로 출력한다. 
+			 
+			 2) 결제 : 결제버튼은 클릭 시 저장된 토큰을 확인 한 후 주문내역을 DB에 저장한다. 이후 OrderCheck page로 이동한다.
+			 
 
 
     5. OrderCheck Page 
 
               Fronted : 고객은 결제를 확인하고 다시 홈으로 돌아간다.
 
-              Backend : 버튼 클릭으로 응답 받은 APP 페이지에서 홈 HTML 페이지로 이동한다. 
+              Backend : 로그아웃 버튼을 클릭하면 Local Storage에 저장된 토큰이 삭제 되고 응답 받은 APP 페이지에서 Login 페이지로 이동한다. 
 *****
 ### The difficulites or limitations of the project
 
