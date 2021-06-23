@@ -10,56 +10,56 @@
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
   <script src="{{url_for('static', filename='js/script.js')}}"></script>
 
-                                                                            
+
   <style>
     * {
-    box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     body {
-    margin: 0;
+      margin: 0;
     }
 
     /* Style the header */
     .header {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
     }
 
 
     /* Create three equal columns that floats next to each other */
     .column {
-    float: left;
-    width: 50%;
-    padding: 15px;
-    text-align: center;
+      float: left;
+      width: 50%;
+      padding: 15px;
+      text-align: center;
     }
 
     /* Clear floats after the columns */
     .row:after {
-    content: "";
-    display: table;
-    clear: both;
+      content: "";
+      display: table;
+      clear: both;
     }
 
     /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
     @media screen and (max-width:600px) {
-    .column {
+      .column {
         width: 100%;
-    }
+      }
     }
 
     /* Footer */
     .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+      padding: 20px;
+      text-align: center;
+      background: #ddd;
+      margin-top: 20px;
     }
 
-   
-    table{
+
+    table {
       border-collapse: collapse;
       border-spacing: 0;
       width: 70%;
@@ -67,35 +67,37 @@
       text-align: center;
       margin: auto;
     }
-       
-    th, td {
+
+    th,
+    td {
       text-align: center;
       padding: 16px;
     }
 
-    th:first-child, td:first-child {
+    th:first-child,
+    td:first-child {
       text-align: left
     }
-    
+
     tr:nth-child(even) {
       background-color: #f2f2f2
     }
-    
+
     .fa-Price {
       color: rgb(15, 15, 15);
     }
-    
+
     .fa-Quant {
       color: rgb(12, 1, 1);
     }
-    .fa-Total  {
+
+    .fa-Total {
       color: rgb(235, 16, 34);
     }
+
     /* </div> */
-  
-  
-  </style> 
- 
+  </style>
+
 </head>
 
 
@@ -104,58 +106,68 @@
   <div class="header">
     <h1>Pick Your Favorite</h1>
     <h2>원하는 메뉴를 선택하세요</h2>
-    <br><br>    
+    <br><br>
   </div>
 
 
-<div class="row">
-  <div class="column">
-    <h2>Order</h2>  
-    <div id="menuname">Coffee in Venice</div><br>
-    <div id="menuprice">5.0</div><br>
-    <div id="menuinfo">크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.</div><br>
-    <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
-    <button type="button" class="button" id="insertorder" onclick=>추가</button>
-    <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+  <div class="row">
+    <div class="column">
+      <h2>Order</h2>
+      <div id="menuname">Coffee in Venice</div><br>
+      <div id="menuprice">5.0</div><br>
+      <div id="menuinfo">크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.</div><br>
+      <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
+      <button type="button" class="button" id="insertorder" onclick=>추가</button>
+      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
-    <br><br>
-    <div id="menuname">Sidamo Mountain Coffee</div><br>
-    <div id="menuprice">6.0</div><br>
-    <div id="menuinfo">에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다</div><br>
-    <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
-    <button type="button" class="button" id="insertorder" onclick=>추가</button>
-    <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+      <br><br>
+      <div id="menuname">Sidamo Mountain Coffee</div><br>
+      <div id="menuprice">6.0</div><br>
+      <div id="menuinfo">에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다</div>
+      <br>
+      <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
+      <button type="button" class="button" id="insertorder" onclick=>추가</button>
+      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
-    <br><br>
-    <div id="menuname">Toba Mist Coffee</div><br>
-    <div id="menuprice">7.0</div><br>
-    <div id="menuinfo">수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다
-    </div><br>
-    <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
-    <button type="button" class="button" id="insertorder" onclick=>추가</button>
-    <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+      <br><br>
+      <div id="menuname">Toba Mist Coffee</div><br>
+      <div id="menuprice">7.0</div><br>
+      <div id="menuinfo">수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다
+      </div><br>
+      <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
+      <button type="button" class="button" id="insertorder" onclick=>추가</button>
+      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
-    <br><br>
-    <div id="menuname">Sweet Mexico Coffee</div><br>
-    <div id="menuprice">8.0</div><br>
-    <div id="menuinfo">팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.</div><br>
-    <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
-    <button type="button" class="button" id="insertorder" onclick=>추가</button>
-    <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+      <br><br>
+      <div id="menuname">Sweet Mexico Coffee</div><br>
+      <div id="menuprice">8.0</div><br>
+      <div id="menuinfo">팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.</div><br>
+      <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
+      <button type="button" class="button" id="insertorder" onclick=>추가</button>
+      <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
 
-    <br>
-  </div>
+      <br>
+    </div>
 
-  <div class="column">
-    <h2>Menu</h2>
-    <table>
+    <div class="column">  
+    <!-- <div> -->
+      <h2>Menu</h2>
+      <!-- <table id="dynamicTable"> -->
+      <table>
         <tr>
-        <th>Coffee</th>
-        <th>Quantity</th>
-        <th>Pice</th>
-        <th>Total Price</th>
-        
+          <th>Coffee</th>
+          <th>Quantity</th>
+          <th>Pice</th>
+          <th>Total Price</th>
         </tr>
+        
+        
+      </table>
+      <div id="tableBody"></div> 
+  </div>
+
+
+<!--                 
         <tr>
         <td>Sample text</td>
         <td><i class="fa fa-remove">2</i></td>
@@ -185,18 +197,18 @@
         <td><i class="fa fa-check"></i></td>
         <td><i class="fa fa-check"></i></td>
         <td><i class="fa fa-Total"></i></td>
-        </tr>
-    </table>
-  <br><br><br><br><br><br>
-  <div id="totalPrice">결제금액</div>
-  <button type="button" class="button" id="select" onclick="total_price()">주문</button>
-  <button type="button" class="button" id="cancel" onclick="location.href='/'">취소</button><br>
-  <br>
-   
-  </div>
-</div>
+        </tr> -->
+      <!-- </table> -->
+      <br><br><br><br><br><br>
+      <div id="totalPrice">결제금액</div>
+      <button type="button" class="button" id="select" onclick="total_price()">주문</button>
+      <button type="button" class="button" id="cancel" onclick="location.href='/'">취소</button><br>
+      <br>
 
-   
+    <!-- </div> -->
+  </div>
+
+
   <div class="footer">
     <br>
     <button type="button" class="button" id="signoff" onclick="location.href='/logout'">로그아웃</button>
@@ -227,14 +239,54 @@
       const xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText)
+          console.log(typeof (this.responseText))
           msg = JSON.parse(this.responseText)
           console.log(msg)
+          console.log("========")
+          tableCreate(msg)
         };
       }
       xhttp.open("post", "menu_select");
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send(menuid);
     }
+
+    // 테이블 생성
+    function tableCreate(td) {
+      var tc = new Array();
+      var tableData = '<table>';
+
+      console.log(td)
+      console.log(typeof (td))
+
+      for (key in td) {
+        tableData += '<tr>';
+        tableData += '<td>' + td[key].name + '</td>';
+        tableData += '<td><i class="fa fa-quentity">' + td[key].count + '</i></td>';
+        tableData += '<td><i class="fa fa-price">' + td[key].price + '</i></td>';
+        tableData += '<td><i class="fa fa-Total">' + td[key].price * td[key].count + '</i></td>';
+        tableData += '</tr>';
+      }
+      tableData = tableData+'</table>';
+
+      // for (key in td) {
+      //   tableData += `<tr>
+      //             <td> + td[key].name + '</td>';
+      //             <td><i class="fa fa-Quantity">' + td[key].count + '</i></td>';
+      //             <td><i class="fa fa-Price">' + td[key].price + '</i></td>';
+      //             <td><i class="fa fa-Total">' + td[key].price * td[key].count + '</i></td>';
+      //             </tr>`;
+      // }
+
+      console.log(tableData);
+      document.getElementById("tableBody").innerHTML = tableData;
+      // document.getElementById("tableBody").
+      
+    }
+    // <td><i class="fa fa-check"></i></td>
+    //     <td><i class="fa fa-check"></i></td>
+    //     <td><i class="fa fa-Total"></i></td>
 
     // 토큰 확인 후 데이터 확인
     function total_price() {

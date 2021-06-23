@@ -83,7 +83,7 @@ def menuselect():
     for i,v in dic.items():
         data[int(i)]['count'] = int(v)
     print(data)
-    return jsonify()
+    return jsonify(data)
 
     # dao 에서 가져와야 하는 것 ->  select menu_name, menu_price from menu where menu_id = :v, v = menu_id
 
