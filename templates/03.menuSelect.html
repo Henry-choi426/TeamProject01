@@ -150,8 +150,8 @@
             5.0<br>
             크림과 오렌지 향이 가득한 따듯한 커피가 반짝이는 베네치아의 축제의 추억을 선사합니다.<br><br>
             <input type="number" class="form" id="orderquantity3" name="orderquantity" min="0" max="">
-            <button type="button" class="button" id="insertorder" onclick=>추가</button>
-            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+            <button type="button" class="button" id="insertorder" onclick="qttPlus(3)">추가</button>
+            <button type="button" class="button" id="updateorder" onclick="qttMinus(3)">빼기</button><br>
           </div>
         </div>
       </div>
@@ -165,8 +165,8 @@
             6.0<br>
             에티오피아 고원 가장자리의 남쪽에 위치한 Sidamo 지역에서 생산된 커피로 인상적인 다양한 풍미를 선사합니다. 매콤하고 향긋한 향과 코코아향이 풍부합니다<br><br>
             <input type="number" class="form" id="orderquantity4" name="orderquantity" min="0" max="">
-            <button type="button" class="button" id="insertorder" onclick=>추가</button>
-            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+            <button type="button" class="button" id="insertorder" onclick="qttPlus(4)">추가</button>
+            <button type="button" class="button" id="updateorder" onclick="qttMinus(4)">빼기</button><br>
           </div>
         </div>
       </div>
@@ -181,8 +181,8 @@
             7.0<br>
             수마트라 섬 해발 약 1,200m의 토바호수 가장자리에서 재배하는 이 특별한 커피는 세미 워싱 프로세스를 통해 꽃향과 시트러스, 다크 초콜릿, 부드러운 향신료 향이 납니다<br><br>
             <input type="number" class="form" id="orderquantity2" name="orderquantity" min="0" max="">
-            <button type="button" class="button" id="insertorder" onclick=>추가</button>
-            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+            <button type="button" class="button" id="insertorder" onclick="qttPlus(2)">추가</button>
+            <button type="button" class="button" id="updateorder" onclick="qttMinus(2)">빼기</button><br>
           </div>
         </div>
       </div>
@@ -197,8 +197,8 @@
             8.0<br>
             팟에 계피와 설탕으로 끓인 전통적인 멕시코커피로 특별한 풍미가 전해집니다.<br><br>
             <input type="number" class="form" id="orderquantity1" name="orderquantity" min="0" max="">
-            <button type="button" class="button" id="insertorder" onclick=>추가</button>
-            <button type="button" class="button" id="updateorder" onclick=>변경</button><br>
+            <button type="button" class="button" id="insertorder" onclick="qttPlus(1)">추가</button>
+            <button type="button" class="button" id="updateorder" onclick="qttMinus(1)">빼기</button><br>
           </div>
         </div>
       </div>
@@ -235,6 +235,18 @@
 
 
   <script>
+    function qttPlus(idx){
+      const pl = 1
+      document.getElementById("orderquantity"+idx).value = Number(document.getElementById("orderquantity"+idx).value) + Number(pl)
+    }
+
+    function qttMinus(idx){
+      if (document.getElementById("orderquantity"+idx).value > 0){
+        document.getElementById("orderquantity"+idx).value = document.getElementById("orderquantity"+idx).value - 1
+      }
+    }
+
+
     function orderComplete() {
       msg = "결제를 하시겠습니까?";
       if (confirm(msg) == 0) {
@@ -250,12 +262,19 @@
       sessionStorage.clear();
       var step;
       var menuAll = '';
+      var check;
       for (step = 1; step < 5; step++) {
         if (document.getElementById("orderquantity" + step).value > 0) {
+          check = check + document.getElementById("orderquantity" + step).value
           sessionStorage.setItem(step, document.getElementById("orderquantity" + step).value);
           menuAll = menuAll + step + "=(" + userId + "," + step + "," + document.getElementById("orderquantity" + step).value + ")&"
         };
       };
+      console.log(check)
+      if (check == null){
+        alert("주문하신 메뉴가 없습니다.")
+        return ""
+      }
       menuAll = menuAll.slice(0, -1);
       orderAjax(menuAll)
     }
@@ -315,7 +334,7 @@
     function tableCreate(td) {
       var tc = new Array();
       var tableData = '<table>';
-
+      var totalP = 0;
       console.log(td)
       console.log(typeof (td))
 
@@ -326,10 +345,12 @@
         tableData += '<td><i class="fa fa-price">' + td[key].price + '</i></td>';
         tableData += '<td><i class="fa fa-Total">' + td[key].price * td[key].count + '</i></td>';
         tableData += '</tr>';
+        totalP = Number(totalP) + Number(td[key].price * td[key].count)
       }
       tableData = tableData + '</table>';
       console.log(tableData);
       document.getElementById("tableBody").innerHTML = tableData;
+      document.getElementById("totalPrice").innerHTML = "총 결제 금액 : "+totalP+"원"
 
     }
 
