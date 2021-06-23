@@ -1,7 +1,7 @@
-                                                                                              MVC_Project 2차.Mini Web Project/ 
-                                                                                              프로젝트 기간 : 210621~210624/ 
-                                                                                              주제 : 매장 배달주문 사이트 /
-                                                                                              조원 : 최한승, 김영민, 이진의, 윤정화
+                         MVC_Project 2차.Mini Web Project/ 
+                         프로젝트 기간 : 210621~210624/ 
+                         주제 : 매장 배달주문 사이트 /
+                         조원 : 최한승, 김영민, 이진의, 윤정화
 
 
 # Take out KIOSK Project 
@@ -64,9 +64,13 @@
 
     4. MenuSelect Page 
 
-              Frontend : 고객은 메뉴별 수량을 설정하고 주문한 것에 대한 가격을 확인 후 결제 할 수 있다. 결제 후 OrderCheck Page로 이동 
+              Frontend : 고객은 메뉴별 수량을 설정하고 주문한 것에 대한 가격을 확인 후 결제 할 수 있다.
+	      		
+			결제 후 OrderCheck Page로 이동 
 
-              Backend :  Local storage에 저장된 토큰이 유효한지 비동기 방식으로 확인 후 메뉴 페이지에서 고객이 지정한 메뉴와 수량을  session storage 에 저장한다.
+              Backend :  Local storage에 저장된 토큰이 유효한지 비동기 방식으로 확인 후,
+	      		
+			메뉴 페이지에서 고객이 지정한 메뉴와 수량을  session storage 에 저장한다.
 	      		
 			 고객이 선택한 메뉴 데이터를 DAO를 통해 DB에서 가격 정보를 빼온다. 
                       
