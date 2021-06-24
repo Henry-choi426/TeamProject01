@@ -1,8 +1,8 @@
-from flask import *
-from flask_jwt_extended import *
-from dao import userDAO
-from dto import *
 from ast import literal_eval
+from flask import Flask, render_template, request, jsonify
+from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity, create_access_token
+from dao import user_dao
+from dto import UserDTO
 
 app = Flask(import_name=__name__)
 
@@ -43,33 +43,33 @@ def ordertcheck_page():
 # 회원가입 비동기
 @app.route('/signup', methods=['post'])
 def new_user():
-    # 하단 코드는 양식에 맞춰 수정 예정
-    # 추가 할 로직 : 회원 가입 전 id 중복 여부 확인
-    user1 = UserDTO(request.form.get("id"),request.form.get("pw"),request.form.get("name"),request.form.get("email"))
-    msg = userDAO.userinsert(user1)
+
+    # html에서 비동기로 받은 회원가입 정보를 DB에 저장.
+
+    user1 = UserDTO(request.form.get("id"),request.form.get("pw"),\
+            request.form.get("name"),request.form.get("email"))
+    msg = user_dao.user_insert(user1)
     if msg:
-        return jsonify(result= request.form.get("id") +"회원가입 완료")
+        return jsonify(result= "id :" +request.form.get("id") 
+        +"회원가입 완료. 로그인 페이지로 이동합니다.")
     else:
-        return jsonify(result= request.form.get("id") +"회원가입 실패")
+        return ""
 
 # 로그인 비동기
 @app.route("/login", methods=['POST'])
 def login_proc():
     user_id = str(request.form.get("id"))
     user_pw = str(request.form.get("pw"))
-    dao = userDAO()
+    dao = user_dao()
     ruser= literal_eval(dao.userone(user_id))
     ruser["pw"] = str(ruser["pw"])
     if user_id == ruser.get('id') and user_pw == ruser.get('pw'):
-        # global bucket = OrderDTO(user_id,1,0) 장바구니 DTO 생성
         return jsonify(
             access_token=create_access_token(identity=user_id,fresh=True)
         ), 200
     else:
         return ""
 
-
-# 메뉴 데이터 select
 @app.route('/menu_select', methods=["post"])
 def menuselect():
     menu = list()
@@ -78,12 +78,10 @@ def menuselect():
     for i in menu:
         cnt.append(request.form.get(i))
     dic = { a:b for a, b in zip(menu, cnt) }
-    data = literal_eval(userDAO.ordermenu(menu))
-    for i,v in dic.items():
-        data[int(i)]['count'] = int(v)
+    data = literal_eval(user_dao.order_menu(menu))
+    for key,value in dic.items():
+        data[int(key)]['count'] = int(value)
     return jsonify(data)
-
-    # dao 에서 가져와야 하는 것 ->  select menu_name, menu_price from menu where menu_id = :v, v = menu_id
 
 @app.route('/order',methods=['post'])
 def order_complete():
@@ -91,23 +89,19 @@ def order_complete():
     cnt = list()
     for i in menu:
         cnt.append(request.form.get(i)[1:-1].split(","))
-    if userDAO.order_insert(cnt):
+    if user_dao.order_insert(cnt):
         return "성공"
     else:
         return ""
-    # dao 만들기
 
 @app.route('/user_only', methods=["post"])
 @jwt_required()
 def user_only():
-    # print("==================")
     cur_user = get_jwt_identity()
-    # print(cur_user)
     if cur_user is None:
         return ""
     else:
         return jsonify(cur_user)
-
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1",

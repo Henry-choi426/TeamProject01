@@ -12,24 +12,26 @@
 
 <body>
   <form>
-    <br><br><br>  
+    <br><br><br>
     <h3>회원가입</h3>
 
     <br>
     <label for="name"><b></b></label><br>
     <input type="text" class="form" id="name" name="name" value="이름test" placeholder="이름" required>
-    
+
     <br>
     <label for="id"><b></b></label><br>
-    <input type="text" class="form" id="id" name="id" value="test" placeholder="아이디" required>
+    <input type="text" class="form" id="id" name="id" value="test" placeholder="아이디" pattern="^[a-zA-Z0-9]+$" required>
 
     <br>
     <label for="pw"><b></b></label><br>
-    <input type="password" class="form" id="pw" name="pw" value="123" placeholder="비밀번호" required>
+    <input type="password" class="form" id="pw" name="pw" value="123" placeholder="비밀번호" pattern="^[a-zA-Z0-9]+$"
+      required>
 
     <br>
     <label for="pwCheck"><b></b></label><br>
-    <input type="password" class="form" id="pwCheck" name="pwCheck" value="123" placeholder="비밀번호확인" required>
+    <input type="password" class="form" id="pwCheck" name="pwCheck" value="123" placeholder="비밀번호확인"
+      pattern="^[a-zA-Z0-9]+$" required>
 
     <br>
     <label for="email"><b></b></label><br>
@@ -46,11 +48,16 @@
       const xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          msg = JSON.parse(this.responseText)
-          alert(msg.result)
-          location.href = "signinpage"
+          if (this.responseText == "") {
+            alert("회원가입을 실패했습니다.");
+          }
+          else {
+            msg = JSON.parse(this.responseText);
+            alert(msg.result);
+            location.href = "signinpage";
+          };
         };
-      }
+      };
       xhttp.open("post", "signup");
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       queryString = 'id=' + document.getElementById("id").value
@@ -59,7 +66,7 @@
         + '&email=' + document.getElementById("email").value;
 
       xhttp.send(queryString);
-    }
+    };
 
   </script>
 
