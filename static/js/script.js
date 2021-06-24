@@ -16,8 +16,8 @@
 //     xhttp.setRequestHeader("Authorization", "Bearer " + token);
 //     xhttp.send();
 //   }
-function logout(){
+function signout(){
   localStorage.clear()
-  alert("로그아웃을 했습니다.")
-  location.href= "signinpage"
+  alert("로그아웃이 완료되었습니다")
+  location.href = "/"
 }
